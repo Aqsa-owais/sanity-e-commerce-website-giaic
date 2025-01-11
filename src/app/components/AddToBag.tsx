@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { urlFor } from "@/lib/sanity";
-import { useShoppingCart } from "use-shopping-cart";
+import { useShoppingCart } from "use-shopping-cart"; // Ensure this path is correct
 
 export interface ProductCart {
   name: string;
@@ -21,7 +21,7 @@ export default function AddToBag({
   price,
   price_id,
 }: ProductCart) {
-  const { addItem, handleCartClick } = useShoppingCart();
+  const { addItem, handleCartClick } = useShoppingCart(); // Ensure this hook is used correctly
 
   const product = {
     name: name,
@@ -34,7 +34,8 @@ export default function AddToBag({
   return (
     <Button
       onClick={() => {
-        addItem(product), handleCartClick();
+        addItem(product);
+        handleCartClick();
       }}
     >
       Add To Cart

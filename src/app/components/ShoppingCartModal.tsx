@@ -99,9 +99,9 @@ export default function ShoppingCartModal() {
             </p>
 
             <div className="mt-6">
-              <Button onClick={handleCheckoutClick} className="w-full">
+              {/* <Button onClick={handleCheckoutClick} className="w-full">
                 Checkout
-              </Button>
+              </Button> */}
             </div>
 
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
