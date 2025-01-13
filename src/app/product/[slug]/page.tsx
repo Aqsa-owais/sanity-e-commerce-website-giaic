@@ -9,13 +9,13 @@ import { Star, Truck } from "lucide-react";
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
         _id,
-          images,
-          price,
-          name,
-          description,
-          "slug": slug.current,
-          "categoryName": category->name,
-          price_id
+        images,
+        price,
+        name,
+        description,
+        "slug": slug.current,
+        "categoryName": category->name,
+        price_id
       }`;
 
   const data = await client.fetch(query);
@@ -25,12 +25,13 @@ async function getData(slug: string) {
 
 export const dynamic = "force-dynamic";
 
-export default async function ProductPge({
+export default async function ProductPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const data: fullProduct = await getData(params.slug);
+  const { slug } = await params;
+  const data: fullProduct = await getData(slug);
 
   return (
     <div className="bg-white">
